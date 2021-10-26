@@ -1,0 +1,28 @@
+{% extends "employee_layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+    <div class="container-fluid">
+      <table class="table border border-dark">
+        <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Telefono</th>
+              <th scope="col">Consulta</th>
+              <th scope="col">Codigo Producto</th>
+            </tr>
+          </thead>
+    {% for x in consultas %}
+            <tr>
+                <td>{{x["nombre"]}}</td>
+                <td>{{x["apellido"]}}</td>
+                <td>{{x["telefono"]}}</td>
+                <td>{{x["consulta"]}}</td>
+                <td><a href="/producto/{{x['item_id']}}">{{x["item_codigo"]}}</a></td>
+                <td><a href="#" class="btn btn-danger">Visto</a></td>
+            </tr>
+    {%endfor%}
+  </div>
+
+  {% endblock%}

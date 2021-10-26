@@ -1,0 +1,33 @@
+{% extends "dashboard.html" %}
+
+{% block content %}
+
+<div class="container">
+  <a type="button" class="btn btn-primary" href="/add_producto">Añadir Producto</a>
+</div>
+<table class="table border border-dark">
+    <thead>
+        <tr>
+          <th scope="col">codigo</th>
+          <th scope="col">Numero Original</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Modelo</th>
+          <th scope="col">Tipo de Cable</th>
+          <th scope="col">Descripcion</th>
+        </tr>
+      </thead>
+{% for producto in productos%}
+        <tr>
+            <td>{{producto["codigo"]}}</td>
+            <td>{{producto["numeroOriginal"]}}</td>
+            <td>{{producto["marca"]}}</td>
+            <td>{{producto["modelo"]}}</td>
+            <td>{{producto["tipoDeCable"]}}</td>
+            <td>{{producto["descripcion"]}}</td>
+            <td><a href="/eliminar/producto/{{producto['codigo']}}" class="btn btn-danger">Eliminar</a></td>
+            <td><a href="#" class="btn btn-danger">Modificar</a></td>
+        </tr>
+{%endfor%}
+</table>
+
+{% endblock%}

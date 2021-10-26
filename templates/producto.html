@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+<div class="container">
+    <img src="{{info['imagen_link']}}" class="img-thumbnail" alt="...">
+    <h1>Codigo : {{info["codigo"]}}</h1>
+    <h1>Numero Original : {{info["numeroOriginal"]}}</h1>
+    <h1>Marca : {{info["marca"]}}</h1>
+    <h1>Modelo : {{info["modelo"]}}</h1>
+    <h1>Tipo de Cable : {{info["tipoCable"]}}</h1>
+    <h1>Descripcion : {{info["descripcion"]}}</h1>
+</div>
+<div class="container p-4" >
+    {{wtf.quick_form(form)}}
+</div>
+
+{% endblock%}

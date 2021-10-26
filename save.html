@@ -1,0 +1,22 @@
+<div class="form">
+    <div class="form-group">
+        {{form.codigo.label}}
+        {{form.codigo}}
+    </div >
+    <div class="form-group">
+        {{form.numeroOriginal.label}}
+        {{form.numeroOriginal}}
+    </div>
+    <div class="form-group">
+        {{form.marca.label}}
+        {{form.marca}}
+    </div>
+    <div class="form-group">
+        {{form.modelo.label}}
+        {{form.modelo}}
+    </div>
+
+        {{form.tipoCable.label}}
+        {{wtf.quick_form(form.tipoCable)}}
+
+    {{form.submit}}
